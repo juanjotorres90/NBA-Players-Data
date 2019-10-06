@@ -17,5 +17,8 @@ export class AppComponent implements OnInit {
     $(function() {
       $('[data-toggle="popover"]').popover();
     });
+
+    this.fetchService.fetchData();
+    this.fetchService.fetchPlayerInfo();
   }
 }

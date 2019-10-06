@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -33,8 +33,6 @@ export class FetchService {
     return this.http.jsonp(url, 'callback=JSONP_CALLBACK').subscribe(data => {
       // tslint:disable-next-line: no-string-literal
       this.fetchedInfo = data['resultSets'][0].rowSet[0];
-      //  this.fetchedData.forEach(player => this.playersFetch.push(player));
-      //  console.log(this.fetchedInfo);
     });
   }
 

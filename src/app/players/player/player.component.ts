@@ -15,6 +15,5 @@ export class PlayerComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     this.playerData = this.fetchService.fetchedInfo;
-    console.log(this.playerData);
   }
 }

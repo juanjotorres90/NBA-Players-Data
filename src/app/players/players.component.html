@@ -1,5 +1,54 @@
+<form class="mb-5" [formGroup]="selectSeason" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="leagueId">League ID</label>
+      <select id="leagueId" class="form-control" formControlName="leagueId">
+        <option>NBA</option>
+        <option>ABA</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="season">Season</label>
+      <select id="season" class="form-control" formControlName="season">
+        <option>2018-19</option>
+        <option>2017-18</option>
+        <option>2016-17</option>
+        <option>2015-16</option>
+        <option>2014-15</option>
+        <option>2013-14</option>
+        <option>2012-13</option>
+        <option>2011-12</option>
+        <option>2010-11</option>
+        <option>2009-10</option>
+        <option>2008-09</option>
+        <option>2007-08</option>
+        <option>2006-07</option>
+        <option>2005-06</option>
+        <option>2004-05</option>
+        <option>2003-04</option>
+        <option>2002-03</option>
+        <option>2001-02</option>
+        <option>2000-01</option>
+        <option>1999-00</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="seasonType">Season Type</label>
+      <select id="seasonType" class="form-control" formControlName="seasonType">
+        <option>Regular Season</option>
+        <option>Pre Season</option>
+        <option>Playoffs</option>
+        <option>All Star</option>
+
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-info d-block mx-auto mt-3">Submit</button>
+</form>
+
+
 <div class="row">
-  <div class="col-6">
+  <div class="col-12">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -10,7 +59,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let player of players; let i = index" (click)="selectedPlayer(player[0])">
+        <tr *ngIf="players.length === 0" class="text-center h4">
+          <th colspan="4">Loading...</th>
+        </tr>
+        <tr *ngFor="let player of players; let i = index" (click)="selectedPlayer(player[0])" routerLink="/playerinfo"
+          routerLinkActive="router-link-active">
           <th scope="row">{{ i + 1 }}</th>
           <td>{{ player[1] }}</td>
           <td>{{ player[4] }}</td>
@@ -19,8 +72,8 @@
       </tbody>
     </table>
   </div>
-  <div class="col-6">
+  <!-- <div class="col-6">
     <app-player></app-player>
-  </div>
+  </div> -->
 
 </div>
