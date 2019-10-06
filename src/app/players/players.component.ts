@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FetchService } from '../services/fetch.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-players',
@@ -7,15 +8,18 @@ import { FetchService } from '../services/fetch.service';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
+  players: Array<any>;
 
-players: Array<any>;
-
-  constructor(private fetchService: FetchService) { }
+  constructor(private fetchService: FetchService) {}
 
   ngOnInit() {
-// this.fetchService.fetchData();
+    this.fetchService.fetchData();
+    this.fetchService.fetchPlayerInfo();
+
     this.players = this.fetchService.playersFetch;
-    console.log(this.players);
   }
 
+  selectedPlayer(player) {
+    this.fetchService.fetchedInfo = this.fetchService.fetchPlayerInfo(player);
+  }
 }

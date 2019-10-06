@@ -1,7 +1,26 @@
 <div class="row">
   <div class="col-6">
-    <app-player *ngFor="let player of players; let i = index" [player]="player" [index]="i"></app-player>
-
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Team</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players; let i = index" (click)="selectedPlayer(player[0])">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ player[1] }}</td>
+          <td>{{ player[4] }}</td>
+          <td>{{ player[3] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6">
+    <app-player></app-player>
   </div>
 
 </div>

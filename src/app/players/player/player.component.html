@@ -1,4 +1,39 @@
-<a class="list-group-item list-group-item-action clearfix badge-light mb-1" routerLinkActive="active">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">Birth date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="playerData">
+      <th scope="row">{{ playerData[0] }}</th>
+      <td>{{ playerData[1] }}</td>
+      <td>{{ playerData[2] }}</td>
+      <td>{{ playerData[6] | date }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- All fetched information from the api -->
+<!-- <a class="list-group-item list-group-item-action clearfix badge-light mb-1" routerLinkActive="active">
   <div class="row">
 
 
@@ -36,4 +71,4 @@
       </ul>
     </div>
   </div>
-</a>
+</a> -->

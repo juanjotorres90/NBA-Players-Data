@@ -11,14 +11,11 @@ export class AppComponent implements OnInit {
 
   constructor(private fetchService: FetchService) {}
 
-ngOnInit() {
-  // tslint:disable-next-line: only-arrow-functions
-  $(function() {
-    $('[data-toggle="popover"]').popover();
-  });
-
-  this.fetchService.fetchData();
-
-}
-
+  ngOnInit() {
+    // Able to use bootstrap popovers anywhere
+    // tslint:disable-next-line: only-arrow-functions
+    $(function() {
+      $('[data-toggle="popover"]').popover();
+    });
+  }
 }

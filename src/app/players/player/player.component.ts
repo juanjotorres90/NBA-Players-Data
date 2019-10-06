@@ -1,18 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { FetchService } from 'src/app/services/fetch.service';
 
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.scss']
 })
-export class PlayerComponent implements OnInit {
+export class PlayerComponent implements OnInit, DoCheck {
+  playerData: Array<any>;
 
-  @Input() player;
-  @Input() index: number;
+  constructor(private fetchService: FetchService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  ngDoCheck() {
+    this.playerData = this.fetchService.fetchedInfo;
+    console.log(this.playerData);
   }
-
 }
