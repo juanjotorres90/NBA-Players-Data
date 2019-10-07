@@ -1,5 +1,8 @@
 # NBA players' info (Vuel...)
 
+### Installation
+ <pre><code> npm install </code></pre>
+ <pre><code> ng serve </code></pre>
 
 # List of players
 
