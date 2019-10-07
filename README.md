@@ -2,7 +2,7 @@
 
 ### Installation
  <pre><code> npm install </code></pre>
- <pre><code> ng serve </code></pre>
+ <pre><code> ng serve --o </code></pre>
 
 # List of players
 
